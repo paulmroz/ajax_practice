@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/app.js"></script>
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
 	@foreach($orders as $order)
@@ -41,7 +42,7 @@
 
 
 	{{ $orders->links() }}
-	<h1>Add Order:</h1>
+	<h2>Add Order:</h2>
 	<form method="POST" action="orders">
 		{{ csrf_field() }}
 		<label for="title">Title</label>
