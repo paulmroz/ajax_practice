@@ -1,0 +1,39 @@
+body {
+  background-color: #C8C8C8FF;
+}
+
+h3,
+h4 {
+  background: #7D7D7DFF;
+  padding: 0.5em;
+}
+
+p {
+  border: 1px solid black;
+  padding: 1em;
+}
+
+hr {
+  padding: 1em;
+}
+
+.updateForm {
+  display: none;
+}
+
+.updateForm input {
+  padding: 1.2em;
+  width: 97.5%;
+}
+
+button {
+  margin-top: 1em;
+  padding: .3em 1em;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+button:hover {
+  background: #7D7D7DFF;
+}
+
