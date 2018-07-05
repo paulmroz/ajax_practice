@@ -14,7 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('isDeleted', 0)->orderBy('created_at','desc')->paginate(3);
+        $orders = Order::where('isDeleted', 0)->orderBy('created_at', 'desc')->paginate(3);
         return view('order.index', compact('orders'));
     }
 
@@ -25,7 +25,6 @@ class OrderController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -68,7 +67,6 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-
     }
 
     /**
@@ -102,10 +100,10 @@ class OrderController extends Controller
         $order->isDeleted = 1;
         $order->save();
         return redirect()->back();
-       /* return response()->json([
-            'status' => 'success',
-            'title' => $order->title,
-            'description' => $order->description,
-        ]);*/
+        /* return response()->json([
+             'status' => 'success',
+             'title' => $order->title,
+             'description' => $order->description,
+         ]);*/
     }
 }
