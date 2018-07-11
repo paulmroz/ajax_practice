@@ -11,6 +11,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
+	<h2>Search for order:</h2>
+	<form method="GET" role="search" action="orders">
+    	<div class="search-control">
+        	<input type="search" id="site-search" name="q"
+               placeholder="Search the site..."
+               aria-label="Search through site content">
+        	<button>Search</button>
+    	</div>
+	</form>
+	@if($orders->count())
 	@foreach($orders as $order)
 
 		<div class="single_order_{{$order->id}}">
@@ -39,7 +49,9 @@
 		</form>
 		<hr>
 	@endforeach
-
+	@else
+		<p>No orders returned.</p>
+	@endif
 
 	{{ $orders->links() }}
 	<h2>Add Order:</h2>

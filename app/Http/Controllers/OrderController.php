@@ -14,7 +14,15 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('isDeleted', 0)->orderBy('created_at', 'desc')->paginate(3);
+        $query = request('q');
+
+        $orders = $query
+        ? $orders = Order::where([
+            ['title', 'LIKE', "%$query%"],
+            ['isDeleted', '=' , 0]
+        ])->orderBy('created_at', 'desc')->paginate(3)
+        : $orders = Order::where('isDeleted', 0)->orderBy('created_at', 'desc')->paginate(3);
+        
         return view('order.index', compact('orders'));
     }
 
